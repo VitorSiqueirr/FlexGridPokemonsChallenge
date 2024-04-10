@@ -1,0 +1,275 @@
+.poke-container {
+  height: 96vh;
+  background-color: #dc0a2d;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 0.75rem 0.5rem;
+}
+
+.search-sort {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  gap: 1rem;
+  padding: 0rem 0.75rem 1.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #ffffff;
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  width: 100%;
+  max-width: 30rem;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.searching {
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.input-search {
+  background: none;
+  border: none;
+  width: 80%;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  font-weight: 400;
+  color: #1d1d1d;
+}
+
+.input-search::placeholder {
+  color: #1d1d1d;
+}
+
+.pokeball-icon {
+  fill: white;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search-icon {
+  fill: #dc0a2d;
+  width: 1rem;
+  height: 1rem;
+}
+
+.sort-icon {
+  fill: #dc0a2d;
+  width: 1rem;
+  height: 1rem;
+}
+
+.pokedex {
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+  background: #ffffff;
+  border: none;
+  max-height: 78vh;
+  border-radius: 0.5rem;
+  padding: 1.5rem 0.75rem;
+  overflow: auto;
+}
+
+.pokedex::-webkit-scrollbar {
+  width: 0.525rem;
+}
+
+.pokedex::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+.pokedex::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.25rem;
+  border: none;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sort-button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 100%;
+  height: 2rem;
+  width: 2rem;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.select {
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.sort-menu-mask,
+.sort-menu {
+  transition: opacity 0.3s ease-in;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in;
+}
+
+.sort-menu-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 900;
+}
+
+.sort-menu {
+  position: absolute;
+  top: 59%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #dc0a2d;
+  border-radius: 1rem;
+  gap: 1rem;
+  width: 8rem;
+  height: 9rem;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.sort-menu p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 0.75rem;
+  font-weight: 700;
+}
+
+.sort-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 70%;
+  background-color: #ffffff;
+  color: #1d1d1d;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+.sort-choice label {
+  display: flex;
+  text-align: start;
+  width: 70%;
+}
+
+.sort-radio {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid red;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.3s;
+  position: relative;
+}
+
+.sort-radio:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s;
+}
+
+.sort-radio:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (min-width: 600px) {
+  header {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .pokeball-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .search-sort {
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    justify-content: space-around;
+  }
+
+  .input-search {
+    font-size: 0.95rem;
+    width: 85%;
+  }
+
+  .sort-menu {
+    top: 60%;
+    left: 59%;
+  }
+}
+
+@media (max-height: 700px) {
+  .pokedex {
+    max-height: 70vh;
+  }
+}
+
+@media (max-height: 800px) and (min-height: 700px) {
+  .pokedex {
+    max-height: 74vh;
+  }
+}

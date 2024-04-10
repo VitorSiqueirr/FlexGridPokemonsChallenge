@@ -1,0 +1,243 @@
+:root {
+  --icon-fill: #ffffff;
+  --icon-size: 1rem;
+  --details-color: #1d1d1d;
+  --poke-name-color: #ffffff;
+}
+
+.chevron-left-icon,
+.chevron-right-icon,
+.arrow-back-icon {
+  fill: var(--icon-fill);
+  border-radius: 100%;
+}
+
+.weight-icon,
+.straighten-icon {
+  fill: var(--details-color);
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.straighten-icon {
+  transform: rotate(90deg);
+}
+
+.details-background {
+  color: var(--details-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.details-background p,
+.info-card p {
+  margin: 0;
+}
+
+.details-background .sub-title {
+  align-self: center;
+  background-color: #efefef;
+  width: max-content;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.details-background .poke-name {
+  text-transform: capitalize;
+  margin: 0;
+  color: var(--poke-name-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.details-background .poke-id {
+  color: var(--poke-name-color);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.details-background .pokeball-icon {
+  fill: hsla(0, 0%, 100%, 0.2);
+  position: absolute;
+  right: 13%;
+  top: 12%;
+  width: 13rem;
+  height: 13rem;
+}
+
+.details-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 40rem;
+  height: max-content;
+}
+
+.infos,
+.status,
+.types,
+.sprite,
+.sub-title,
+.description {
+  position: relative;
+  z-index: 1;
+}
+
+.sprite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.icon-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sprite img {
+  width: 75%;
+  max-width: 13rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.details::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  height: 125%;
+  background: #efefef;
+  z-index: 0;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+.types {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.type {
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  width: 4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.infos {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 100%;
+  max-width: 25rem;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem 0;
+}
+
+.info-card {
+  display: flex;
+  font-size: 0.8rem;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info-card span {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.info-card p {
+  color: #666666;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.vertical-line-details {
+  position: absolute;
+  border-left: 1px solid;
+  border-color: #b3b3b3;
+  left: 35%;
+  top: 0%;
+  height: 3rem;
+}
+
+.second-vertical-line {
+  left: 65%;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.description p {
+  text-align: justify;
+  font-size: 0.8rem;
+  max-width: 80%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .details-background .poke-name {
+    font-size: 2rem;
+  }
+  .details-background .poke-id {
+    font-size: 1.5rem;
+  }
+  .info-card {
+    font-size: 1rem;
+  }
+  .abilities {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 344px) {
+  .details-background .pokeball-icon {
+    right: 0;
+  }
+}
